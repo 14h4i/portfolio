@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:portfolio/pages/main_page.dart';
+import 'package:portfolio/values/app_colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,20 +14,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+      title: 'portfolio',
+      theme: ThemeData.dark().copyWith(
+        primaryColor: AppColors.primaryColor,
+        scaffoldBackgroundColor: AppColors.bgColor,
+        canvasColor: AppColors.bgColor,
+        textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
+            .apply(bodyColor: Colors.white)
+            .copyWith(
+              bodyText1: const TextStyle(color: AppColors.bodyTextColor),
+              bodyText2: const TextStyle(color: AppColors.bodyTextColor),
+            ),
       ),
-      home: Container(),
+      home: const MainPage(),
     );
   }
 }
