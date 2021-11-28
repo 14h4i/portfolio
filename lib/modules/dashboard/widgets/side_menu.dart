@@ -12,10 +12,28 @@ import 'package:portfolio/utils/text_style_utils.dart';
 
 import 'coding.dart';
 
-class SideMenu extends StatelessWidget {
+class SideMenu extends StatefulWidget {
   const SideMenu({
     Key? key,
   }) : super(key: key);
+
+  @override
+  State<SideMenu> createState() => _SideMenuState();
+}
+
+class _SideMenuState extends State<SideMenu> {
+  late ScrollController _scrollController;
+  @override
+  void initState() {
+    super.initState();
+    _scrollController = ScrollController();
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+    _scrollController.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,6 +43,7 @@ class SideMenu extends StatelessWidget {
           const MyInfo(),
           Expanded(
               child: SingleChildScrollView(
+            controller: _scrollController,
             padding: const EdgeInsets.all(ConstantUtils.defaultPadding),
             child: Column(
               children: [

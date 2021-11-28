@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/modules/dashboard/pages/dashboard_page.dart';
+import 'package:portfolio/modules/home/pages/home_page.dart';
 import 'package:portfolio/utils/color_utils.dart';
 import 'package:portfolio/utils/text_style_utils.dart';
 
@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
               bodyText2: TextStyleUtils.bodyText2,
             ),
       ),
-      home: const DashboardPage(),
+      home: const HomePage(),
     );
   }
 }
