@@ -7,7 +7,7 @@ class TextStyleUtils {
 
   static const position = TextStyle(fontWeight: FontWeight.w200, height: 1.5);
 
-  static const lable = TextStyle(color: Colors.white);
+  static const label = TextStyle(color: Colors.white);
 
   static const downloadCV = TextStyle(color: ColorUtils.bodyTextColor);
 }

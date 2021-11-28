@@ -4,11 +4,11 @@ import 'package:portfolio/utils/constant_utils.dart';
 
 class AnimatedCircularProgressIndicator extends StatelessWidget {
   final double percentage;
-  final String lable;
+  final String label;
   const AnimatedCircularProgressIndicator({
     Key? key,
     required this.percentage,
-    required this.lable,
+    required this.label,
   }) : super(key: key);
 
   @override
@@ -40,7 +40,7 @@ class AnimatedCircularProgressIndicator extends StatelessWidget {
         ),
         const SizedBox(height: ConstantUtils.defaultPadding / 2),
         Text(
-          lable,
+          label,
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: Theme.of(context).textTheme.subtitle2,

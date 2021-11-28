@@ -27,7 +27,7 @@ class Skills extends StatelessWidget {
           children: const [
             Expanded(
               child: AnimatedCircularProgressIndicator(
-                lable: "Flutter",
+                label: "Flutter",
                 percentage: InfoUtils.percentageFlutter,
               ),
             ),
@@ -36,7 +36,7 @@ class Skills extends StatelessWidget {
             ),
             Expanded(
               child: AnimatedCircularProgressIndicator(
-                lable: "GitHub",
+                label: "GitHub",
                 percentage: InfoUtils.percentageGithub,
               ),
             ),
@@ -45,7 +45,7 @@ class Skills extends StatelessWidget {
             ),
             Expanded(
               child: AnimatedCircularProgressIndicator(
-                lable: "Firebase",
+                label: "Firebase",
                 percentage: InfoUtils.percentageFirebase,
               ),
             ),

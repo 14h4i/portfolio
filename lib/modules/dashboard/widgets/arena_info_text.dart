@@ -20,7 +20,7 @@ class ArenaInfoText extends StatelessWidget {
         children: [
           Text(
             title!,
-            style: TextStyleUtils.lable,
+            style: TextStyleUtils.label,
           ),
           Text(text!),
         ],
