@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:portfolio/pages/main_page.dart';
-import 'package:portfolio/values/app_colors.dart';
+import 'package:portfolio/modules/dashboard/pages/dashboard_page.dart';
+import 'package:portfolio/utils/color_utils.dart';
+import 'package:portfolio/utils/text_style_utils.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,17 +17,17 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'portfolio',
       theme: ThemeData.dark().copyWith(
-        primaryColor: AppColors.primaryColor,
-        scaffoldBackgroundColor: AppColors.bgColor,
-        canvasColor: AppColors.bgColor,
+        primaryColor: ColorUtils.primaryColor,
+        scaffoldBackgroundColor: ColorUtils.bgColor,
+        canvasColor: ColorUtils.bgColor,
         textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
             .apply(bodyColor: Colors.white)
             .copyWith(
-              bodyText1: const TextStyle(color: AppColors.bodyTextColor),
-              bodyText2: const TextStyle(color: AppColors.bodyTextColor),
+              bodyText1: TextStyleUtils.bodyText1,
+              bodyText2: TextStyleUtils.bodyText2,
             ),
       ),
-      home: const MainPage(),
+      home: const DashboardPage(),
     );
   }
 }
