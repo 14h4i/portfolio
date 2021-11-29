@@ -16,6 +16,7 @@ class MyProjects extends StatelessWidget {
           'My Projects',
           style: Theme.of(context).textTheme.headline6,
         ),
+        const SizedBox(height: ConstantUtils.defaultPadding),
         GridView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
