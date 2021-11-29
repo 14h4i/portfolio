@@ -16,7 +16,7 @@ class HighLight extends StatelessWidget {
     return Row(
       children: [
         counter,
-        SizedBox(width: ConstantUtils.defaultPadding / 2),
+        const SizedBox(width: ConstantUtils.defaultPadding / 2),
         Text(
           label!,
           style: Theme.of(context).textTheme.subtitle2,

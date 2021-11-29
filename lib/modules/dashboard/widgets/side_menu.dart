@@ -38,76 +38,78 @@ class _SideMenuState extends State<SideMenu> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Column(
-        children: [
-          const MyInfo(),
-          Expanded(
-              child: SingleChildScrollView(
-            controller: _scrollController,
-            padding: const EdgeInsets.all(ConstantUtils.defaultPadding),
-            child: Column(
-              children: [
-                const ArenaInfoText(
-                  title: 'Residence',
-                  text: InfoUtils.residence,
-                ),
-                const ArenaInfoText(
-                  title: 'City',
-                  text: InfoUtils.city,
-                ),
-                const ArenaInfoText(
-                  title: 'Age',
-                  text: InfoUtils.age,
-                ),
-                const Skills(),
-                const SizedBox(height: ConstantUtils.defaultPadding),
-                const Coding(),
-                const Knowledges(),
-                const Divider(),
-                const SizedBox(height: ConstantUtils.defaultPadding / 2),
-                TextButton(
-                  child: FittedBox(
+      child: SafeArea(
+        child: Column(
+          children: [
+            const MyInfo(),
+            Expanded(
+                child: SingleChildScrollView(
+              controller: _scrollController,
+              padding: const EdgeInsets.all(ConstantUtils.defaultPadding),
+              child: Column(
+                children: [
+                  const ArenaInfoText(
+                    title: 'Residence',
+                    text: InfoUtils.residence,
+                  ),
+                  const ArenaInfoText(
+                    title: 'City',
+                    text: InfoUtils.city,
+                  ),
+                  const ArenaInfoText(
+                    title: 'Age',
+                    text: InfoUtils.age,
+                  ),
+                  const Skills(),
+                  const SizedBox(height: ConstantUtils.defaultPadding),
+                  const Coding(),
+                  const Knowledges(),
+                  const Divider(),
+                  const SizedBox(height: ConstantUtils.defaultPadding / 2),
+                  TextButton(
+                    child: FittedBox(
+                      child: Row(
+                        children: [
+                          const Text(
+                            'DOWNLOAD CV',
+                            style: TextStyleUtils.downloadCV,
+                          ),
+                          const SizedBox(
+                              height: ConstantUtils.defaultPadding / 2),
+                          SvgPicture.asset(IconUtils.download),
+                        ],
+                      ),
+                    ),
+                    onPressed: () {},
+                  ),
+                  Container(
+                    margin: const EdgeInsets.only(
+                        top: ConstantUtils.defaultPadding),
+                    color: ColorUtils.buttonColor,
                     child: Row(
                       children: [
-                        const Text(
-                          'DOWNLOAD CV',
-                          style: TextStyleUtils.downloadCV,
+                        const Spacer(),
+                        IconButton(
+                          icon: SvgPicture.asset(IconUtils.linkedin),
+                          onPressed: () {},
                         ),
-                        const SizedBox(
-                            height: ConstantUtils.defaultPadding / 2),
-                        SvgPicture.asset(IconUtils.download),
+                        IconButton(
+                          icon: SvgPicture.asset(IconUtils.github),
+                          onPressed: () {},
+                        ),
+                        IconButton(
+                          icon: SvgPicture.asset(IconUtils.twitter),
+                          onPressed: () {},
+                        ),
+                        const Spacer(),
                       ],
                     ),
-                  ),
-                  onPressed: () {},
-                ),
-                Container(
-                  margin:
-                      const EdgeInsets.only(top: ConstantUtils.defaultPadding),
-                  color: ColorUtils.buttonColor,
-                  child: Row(
-                    children: [
-                      const Spacer(),
-                      IconButton(
-                        icon: SvgPicture.asset(IconUtils.linkedin),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: SvgPicture.asset(IconUtils.github),
-                        onPressed: () {},
-                      ),
-                      IconButton(
-                        icon: SvgPicture.asset(IconUtils.twitter),
-                        onPressed: () {},
-                      ),
-                      const Spacer(),
-                    ],
-                  ),
-                )
-              ],
-            ),
-          )),
-        ],
+                  )
+                ],
+              ),
+            )),
+          ],
+        ),
       ),
     );
   }
