@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/modules/dashboard/pages/dashboard_page.dart';
+import 'package:portfolio/modules/home/widgets/high_lights_info.dart';
 import 'package:portfolio/modules/home/widgets/home_banner.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,9 +8,10 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DashboardPage(
+    return DashboardPage(
       children: [
         HomeBanner(),
+        HighLightsInfo(),
       ],
     );
   }
