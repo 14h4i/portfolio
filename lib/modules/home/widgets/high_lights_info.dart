@@ -45,7 +45,7 @@ class HighLightsInfo extends StatelessWidget {
                         value: 30,
                         text: '+',
                       ),
-                      label: 'Github Projects',
+                      label: 'Github Public Repositories',
                     ),
                     HighLight(
                       counter: AnimatedCouter(
@@ -80,7 +80,7 @@ class HighLightsInfo extends StatelessWidget {
                     value: 30,
                     text: '+',
                   ),
-                  label: 'Github Projects',
+                  label: 'Github Public Repositories',
                 ),
                 HighLight(
                   counter: AnimatedCouter(

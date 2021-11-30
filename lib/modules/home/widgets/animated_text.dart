@@ -1,6 +1,7 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/constant_utils.dart';
+import 'package:portfolio/utils/info_utils.dart';
 
 class AnimatedText extends StatelessWidget {
   const AnimatedText({
@@ -11,19 +12,21 @@ class AnimatedText extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedTextKit(
       animatedTexts: [
-        TyperAnimatedText(
-          "responsive web and mobile app.",
-          speed: ConstantUtils.speedTyperAnimatedText,
-        ),
-        TyperAnimatedText(
-          "complete e-Commerce app UI.",
-          speed: ConstantUtils.speedTyperAnimatedText,
-        ),
-        TyperAnimatedText(
-          "Chat app with dark and light theme.",
-          speed: ConstantUtils.speedTyperAnimatedText,
-        ),
+        ..._buildAnimatedTexts(),
       ],
     );
+  }
+
+  List<TyperAnimatedText> _buildAnimatedTexts() {
+    List<TyperAnimatedText> list = [];
+    for (int i = 0; i < InfoUtils.animatedTexts.length; i++) {
+      list.add(
+        TyperAnimatedText(
+          InfoUtils.animatedTexts.elementAt(i),
+          speed: ConstantUtils.speedTyperAnimatedText,
+        ),
+      );
+    }
+    return list;
   }
 }

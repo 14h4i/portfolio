@@ -1,9 +1,12 @@
 class InfoUtils {
   static const String name = 'Pham Gia Khai';
   static const String position = 'Junior Flutter Developer';
-  static const String residence = 'Viet Nam';
-  static const String city = 'Ho Chi Minh';
-  static const String age = '21';
+
+  static const Map<String, String> infos = {
+    'Country': 'Viet Nam',
+    'City': 'Ho Chi Minh',
+    'Age': '21',
+  };
 
   static const Map<String, double> skills = {
     'Flutter': 0.7,
@@ -24,5 +27,11 @@ class InfoUtils {
     'Firebase, Firestore, Storage',
     'Nodejs ,Cloud Functions',
     'java Servlet, JSP',
+  ];
+
+  static const List<String> animatedTexts = [
+    'responsive web and mobile app.',
+    'complete e-Commerce app UI.',
+    'Chat app with dark and light theme.',
   ];
 }

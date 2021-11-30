@@ -3,7 +3,7 @@ import 'package:portfolio/modules/dashboard/pages/dashboard_page.dart';
 import 'package:portfolio/modules/home/widgets/high_lights_info.dart';
 import 'package:portfolio/modules/home/widgets/home_banner.dart';
 import 'package:portfolio/modules/home/widgets/my_projects.dart';
-import 'package:portfolio/modules/home/widgets/recommendations.dart';
+// import 'package:portfolio/modules/home/widgets/recommendations.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -15,7 +15,7 @@ class HomePage extends StatelessWidget {
         HomeBanner(),
         HighLightsInfo(),
         MyProjects(),
-        Recommendations(),
+        // Recommendations(),
       ],
     );
   }

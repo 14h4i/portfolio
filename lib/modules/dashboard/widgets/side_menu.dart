@@ -48,18 +48,7 @@ class _SideMenuState extends State<SideMenu> {
               padding: const EdgeInsets.all(ConstantUtils.defaultPadding),
               child: Column(
                 children: [
-                  const ArenaInfoText(
-                    title: 'Residence',
-                    text: InfoUtils.residence,
-                  ),
-                  const ArenaInfoText(
-                    title: 'City',
-                    text: InfoUtils.city,
-                  ),
-                  const ArenaInfoText(
-                    title: 'Age',
-                    text: InfoUtils.age,
-                  ),
+                  ..._buildInfos(),
                   TextButton(
                     child: FittedBox(
                       child: Row(
@@ -112,5 +101,18 @@ class _SideMenuState extends State<SideMenu> {
         ),
       ),
     );
+  }
+
+  List<Widget> _buildInfos() {
+    List<Widget> list = [];
+    for (int i = 0; i < InfoUtils.infos.length; i++) {
+      list.add(
+        ArenaInfoText(
+          title: InfoUtils.infos.keys.elementAt(i),
+          text: InfoUtils.infos.values.elementAt(i),
+        ),
+      );
+    }
+    return list;
   }
 }
