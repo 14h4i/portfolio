@@ -60,12 +60,6 @@ class _SideMenuState extends State<SideMenu> {
                     title: 'Age',
                     text: InfoUtils.age,
                   ),
-                  const Skills(),
-                  const SizedBox(height: ConstantUtils.defaultPadding),
-                  const Coding(),
-                  const Knowledges(),
-                  const Divider(),
-                  const SizedBox(height: ConstantUtils.defaultPadding / 2),
                   TextButton(
                     child: FittedBox(
                       child: Row(
@@ -104,7 +98,13 @@ class _SideMenuState extends State<SideMenu> {
                         const Spacer(),
                       ],
                     ),
-                  )
+                  ),
+                  const Skills(),
+                  const SizedBox(height: ConstantUtils.defaultPadding),
+                  const Coding(),
+                  const Knowledges(),
+                  const Divider(),
+                  const SizedBox(height: ConstantUtils.defaultPadding / 2),
                 ],
               ),
             )),

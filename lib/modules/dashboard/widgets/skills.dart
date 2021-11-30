@@ -24,34 +24,33 @@ class Skills extends StatelessWidget {
           ),
         ),
         Row(
-          children: const [
-            Expanded(
-              child: AnimatedCircularProgressIndicator(
-                label: "Flutter",
-                percentage: InfoUtils.percentageFlutter,
-              ),
-            ),
-            SizedBox(
-              width: ConstantUtils.defaultPadding,
-            ),
-            Expanded(
-              child: AnimatedCircularProgressIndicator(
-                label: "GitHub",
-                percentage: InfoUtils.percentageGithub,
-              ),
-            ),
-            SizedBox(
-              width: ConstantUtils.defaultPadding,
-            ),
-            Expanded(
-              child: AnimatedCircularProgressIndicator(
-                label: "Firebase",
-                percentage: InfoUtils.percentageFirebase,
-              ),
-            ),
+          children: [
+            ..._buildSkills(),
           ],
         ),
       ],
     );
+  }
+
+  List<Widget> _buildSkills() {
+    List<Widget> list = [];
+    for (int i = 0; i < InfoUtils.skills.length; i++) {
+      list.add(
+        Expanded(
+          child: AnimatedCircularProgressIndicator(
+            label: InfoUtils.skills.keys.elementAt(i),
+            percentage: InfoUtils.skills.values.elementAt(i),
+          ),
+        ),
+      );
+      if (i != InfoUtils.skills.length - 1) {
+        list.add(
+          const SizedBox(
+            width: ConstantUtils.defaultPadding,
+          ),
+        );
+      }
+    }
+    return list;
   }
 }

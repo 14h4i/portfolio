@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/utils/constant_utils.dart';
+import 'package:portfolio/utils/info_utils.dart';
 import 'package:portfolio/widgets/animated_linear_progress_indicator.dart';
 
 class Coding extends StatelessWidget {
@@ -21,27 +22,21 @@ class Coding extends StatelessWidget {
             style: Theme.of(context).textTheme.subtitle2,
           ),
         ),
-        const AnimatedLinearProgressIndicator(
-          label: 'Dart',
-          percentage: 0.75,
-        ),
-        const AnimatedLinearProgressIndicator(
-          label: 'JavaScript',
-          percentage: 0.68,
-        ),
-        const AnimatedLinearProgressIndicator(
-          label: 'Java',
-          percentage: 0.64,
-        ),
-        const AnimatedLinearProgressIndicator(
-          label: 'SQL',
-          percentage: 0.57,
-        ),
-        const AnimatedLinearProgressIndicator(
-          label: 'C++',
-          percentage: 0.66,
-        ),
+        ..._buildCoding(),
       ],
     );
+  }
+
+  List<Widget> _buildCoding() {
+    List<Widget> list = [];
+    for (int i = 0; i < InfoUtils.codings.length; i++) {
+      list.add(
+        AnimatedLinearProgressIndicator(
+          label: InfoUtils.codings.keys.elementAt(i),
+          percentage: InfoUtils.codings.values.elementAt(i),
+        ),
+      );
+    }
+    return list;
   }
 }
