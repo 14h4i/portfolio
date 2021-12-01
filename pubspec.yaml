@@ -29,15 +29,21 @@ environment:
 dependencies:
   animated_text_kit: ^4.2.1
   cupertino_icons: ^1.0.2
+  dio: ^4.0.4
   flutter:
     sdk: flutter
   flutter_svg: ^0.23.0+1
   google_fonts: ^2.1.0
+  json_annotation: ^4.3.0
+  rxdart: ^0.27.3
+  shared_preferences: ^2.0.9
 
 dev_dependencies:
+  build_runner: ^2.0.0
   flutter_lints: ^1.0.0
   flutter_test:
     sdk: flutter
+  json_serializable: ^6.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
