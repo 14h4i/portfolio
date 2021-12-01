@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/modules/dashboard/widgets/knowledge_text.dart';
+import 'package:portfolio/modules/main/widgets/knowledge_text.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/info_utils.dart';
 

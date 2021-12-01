@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:portfolio/modules/dashboard/widgets/arena_info_text.dart';
-import 'package:portfolio/modules/dashboard/widgets/knowledges.dart';
-import 'package:portfolio/modules/dashboard/widgets/my_info.dart';
-import 'package:portfolio/modules/dashboard/widgets/skills.dart';
+import 'package:portfolio/modules/main/widgets/arena_info_text.dart';
+import 'package:portfolio/modules/main/widgets/knowledges.dart';
+import 'package:portfolio/modules/main/widgets/my_info.dart';
+import 'package:portfolio/modules/main/widgets/skills.dart';
 import 'package:portfolio/utils/color_utils.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/icon_utils.dart';

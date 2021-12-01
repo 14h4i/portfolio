@@ -1,22 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/modules/dashboard/widgets/side_menu.dart';
+import 'package:portfolio/modules/main/widgets/side_menu.dart';
 import 'package:portfolio/providers/responsive.dart';
 import 'package:portfolio/utils/color_utils.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 
-class DashboardPage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   final List<Widget> children;
 
-  const DashboardPage({
+  const MainPage({
     Key? key,
     required this.children,
   }) : super(key: key);
 
   @override
-  State<DashboardPage> createState() => _DashboardPageState();
+  State<MainPage> createState() => _MainPageState();
 }
 
-class _DashboardPageState extends State<DashboardPage> {
+class _MainPageState extends State<MainPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
