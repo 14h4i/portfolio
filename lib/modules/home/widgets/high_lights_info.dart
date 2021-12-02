@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common/widgets/stateless/animated_counter.dart';
+import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/home/widgets/high_light.dart';
 import 'package:portfolio/providers/responsive.dart';
 import 'package:portfolio/utils/constant_utils.dart';
-import 'package:portfolio/widgets/animated_counter.dart';
 
 class HighLightsInfo extends StatelessWidget {
+  final Info info;
   const HighLightsInfo({
     Key? key,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -39,15 +42,15 @@ class HighLightsInfo extends StatelessWidget {
                 const SizedBox(height: ConstantUtils.defaultPadding),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     HighLight(
                       counter: AnimatedCouter(
-                        value: 30,
+                        value: info.repos ?? 0,
                         text: '+',
                       ),
                       label: 'Github Public Repositories',
                     ),
-                    HighLight(
+                    const HighLight(
                       counter: AnimatedCouter(
                         value: 13,
                         text: 'K+',
@@ -60,15 +63,15 @@ class HighLightsInfo extends StatelessWidget {
             )
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: const [
-                HighLight(
+              children: [
+                const HighLight(
                   counter: AnimatedCouter(
                     value: 119,
                     text: '+',
                   ),
                   label: 'Subscribers',
                 ),
-                HighLight(
+                const HighLight(
                   counter: AnimatedCouter(
                     value: 40,
                     text: '+',
@@ -77,12 +80,12 @@ class HighLightsInfo extends StatelessWidget {
                 ),
                 HighLight(
                   counter: AnimatedCouter(
-                    value: 30,
+                    value: info.repos ?? 0,
                     text: '+',
                   ),
                   label: 'Github Public Repositories',
                 ),
-                HighLight(
+                const HighLight(
                   counter: AnimatedCouter(
                     value: 13,
                     text: 'K+',

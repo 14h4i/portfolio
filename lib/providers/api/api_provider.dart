@@ -65,7 +65,7 @@ class ApiProvider {
     }, onError: (DioError e, ErrorInterceptorHandler handler) async {
       logger.log(e.response.toString());
 
-      // TODO: refresh token && handle error
+      //  TODOs: refresh token && handle error
       return handler.next(e); //continue
     }));
   }

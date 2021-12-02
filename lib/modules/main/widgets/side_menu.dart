@@ -1,5 +1,7 @@
+import 'dart:html' as html;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/main/widgets/arena_info_text.dart';
 import 'package:portfolio/modules/main/widgets/knowledges.dart';
 import 'package:portfolio/modules/main/widgets/my_info.dart';
@@ -9,12 +11,15 @@ import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/icon_utils.dart';
 import 'package:portfolio/utils/info_utils.dart';
 import 'package:portfolio/utils/text_style_utils.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 import 'coding.dart';
 
 class SideMenu extends StatefulWidget {
+  final Info info;
   const SideMenu({
     Key? key,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -41,25 +46,42 @@ class _SideMenuState extends State<SideMenu> {
       child: SafeArea(
         child: Column(
           children: [
-            const MyInfo(),
+            MyInfo(info: widget.info),
             Expanded(
                 child: SingleChildScrollView(
               controller: _scrollController,
               padding: const EdgeInsets.all(ConstantUtils.defaultPadding),
               child: Column(
                 children: [
-                  ..._buildInfos(),
+                  // ..._buildInfos(),
+                  ArenaInfoText(
+                    title: 'Country',
+                    text: widget.info.country,
+                  ),
+                  ArenaInfoText(
+                    title: 'City',
+                    text: widget.info.city,
+                  ),
+                  const ArenaInfoText(
+                    title: 'Age',
+                    text: InfoUtils.age,
+                  ),
                   TextButton(
                     child: FittedBox(
                       child: Row(
-                        children: [
-                          const Text(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Text(
                             'DOWNLOAD CV',
                             style: TextStyleUtils.downloadCV,
                           ),
-                          const SizedBox(
-                              height: ConstantUtils.defaultPadding / 2),
-                          SvgPicture.asset(IconUtils.download),
+                          SizedBox(width: ConstantUtils.defaultPadding / 2),
+                          // SvgPicture.asset(IconUtils.download),
+                          Icon(
+                            FontAwesomeIcons.download,
+                            color: ColorUtils.bodyTextColor,
+                          )
                         ],
                       ),
                     ),
@@ -73,16 +95,33 @@ class _SideMenuState extends State<SideMenu> {
                       children: [
                         const Spacer(),
                         IconButton(
-                          icon: SvgPicture.asset(IconUtils.linkedin),
-                          onPressed: () {},
+                          icon: const Icon(FontAwesomeIcons.linkedin,
+                              color: ColorUtils.bodyTextColor),
+                          onPressed: () {
+                            html.window.location.href = InfoUtils.linkedin;
+                          },
                         ),
                         IconButton(
-                          icon: SvgPicture.asset(IconUtils.github),
-                          onPressed: () {},
+                          icon: const Icon(FontAwesomeIcons.github,
+                              color: ColorUtils.bodyTextColor),
+                          onPressed: () {
+                            html.window.location.href = widget.info.github!;
+                          },
                         ),
                         IconButton(
-                          icon: SvgPicture.asset(IconUtils.twitter),
-                          onPressed: () {},
+                          icon: const Icon(FontAwesomeIcons.envelope,
+                              color: ColorUtils.bodyTextColor),
+                          onPressed: () {
+                            html.window.location.href =
+                                "mailto:${widget.info.email}";
+                          },
+                        ),
+                        IconButton(
+                          icon: const Icon(FontAwesomeIcons.telegram,
+                              color: ColorUtils.bodyTextColor),
+                          onPressed: () {
+                            html.window.location.href = InfoUtils.telegram;
+                          },
                         ),
                         const Spacer(),
                       ],
@@ -101,18 +140,5 @@ class _SideMenuState extends State<SideMenu> {
         ),
       ),
     );
-  }
-
-  List<Widget> _buildInfos() {
-    List<Widget> list = [];
-    for (int i = 0; i < InfoUtils.infos.length; i++) {
-      list.add(
-        ArenaInfoText(
-          title: InfoUtils.infos.keys.elementAt(i),
-          text: InfoUtils.infos.values.elementAt(i),
-        ),
-      );
-    }
-    return list;
   }
 }

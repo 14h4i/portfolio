@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/main/widgets/side_menu.dart';
 import 'package:portfolio/providers/responsive.dart';
 import 'package:portfolio/utils/color_utils.dart';
@@ -6,10 +7,12 @@ import 'package:portfolio/utils/constant_utils.dart';
 
 class MainPage extends StatefulWidget {
   final List<Widget> children;
+  final Info info;
 
   const MainPage({
     Key? key,
     required this.children,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -32,7 +35,9 @@ class _MainPageState extends State<MainPage> {
                   },
                 ),
               )),
-      drawer: const SideMenu(),
+      drawer: SideMenu(
+        info: widget.info,
+      ),
       body: Center(
         child: Container(
           constraints: const BoxConstraints(maxWidth: ConstantUtils.maxWidth),
@@ -40,9 +45,11 @@ class _MainPageState extends State<MainPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               if (Responsive.isDesktop(context))
-                const Expanded(
+                Expanded(
                   flex: 2,
-                  child: SideMenu(),
+                  child: SideMenu(
+                    info: widget.info,
+                  ),
                 ),
               const SizedBox(width: ConstantUtils.defaultPadding),
               Expanded(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/common/widgets/stateless/animated_circular_progress_indicator.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/info_utils.dart';
-import 'package:portfolio/widgets/animated_circular_progress_indicator.dart';
 
 class Skills extends StatelessWidget {
   const Skills({

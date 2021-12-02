@@ -4,5 +4,6 @@ class IconUtils {
   static const download = _pathIcons + 'download.svg';
   static const linkedin = _pathIcons + 'linkedin.svg';
   static const github = _pathIcons + 'github.svg';
-  static const twitter = _pathIcons + 'twitter.svg';
+  static const email = _pathIcons + 'email.svg';
+  static const telegram = _pathIcons + 'telegram.svg';
 }

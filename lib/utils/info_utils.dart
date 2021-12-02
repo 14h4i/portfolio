@@ -1,12 +1,15 @@
 class InfoUtils {
-  static const String name = 'Pham Gia Khai';
   static const String position = 'Junior Flutter Developer';
+  static const String linkedin = "https://www.linkedin.com/in/14h4i/";
+  static const String telegram = "https://t.me/l4h4i";
 
-  static const Map<String, String> infos = {
-    'Country': 'Viet Nam',
-    'City': 'Ho Chi Minh',
-    'Age': '21',
-  };
+  static const String age = '21';
+
+  // static const Map<String, String> infos = {
+  //   'Country': 'Viet Nam',
+  //   'City': 'Ho Chi Minh',
+  //   'Age': '21',
+  // };
 
   static const Map<String, double> skills = {
     'Flutter': 0.7,

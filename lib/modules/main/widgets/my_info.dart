@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/utils/image_utils.dart';
+import 'package:portfolio/common/widgets/stateless/circle_avatar_border.dart';
+import 'package:portfolio/models/info.dart';
 import 'package:portfolio/utils/info_utils.dart';
 import 'package:portfolio/utils/text_style_utils.dart';
 import 'package:portfolio/utils/color_utils.dart';
 
 class MyInfo extends StatelessWidget {
+  final Info info;
   const MyInfo({
     Key? key,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -19,13 +22,13 @@ class MyInfo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             const Spacer(flex: 2),
-            const CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage(ImageUtils.avatar),
+            CircleAvatarBorder(
+              size: 100,
+              avatarUrl: info.avatarUrl,
             ),
             const Spacer(flex: 1),
             Text(
-              InfoUtils.name,
+              info.name ?? 'Unknown',
               style: Theme.of(context).textTheme.subtitle2,
             ),
             const Text(

@@ -31,6 +31,10 @@ class Info {
     this.email,
   );
 
+  String get country =>
+      location != null ? location!.split(', ').elementAt(0) : '';
+  String get city => location != null ? location!.split(', ').elementAt(1) : '';
+
   factory Info.fromJson(Map<String, dynamic> json) => _$InfoFromJson(json);
 
   Map<String, dynamic> toJson() => _$InfoToJson(this);
