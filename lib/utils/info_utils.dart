@@ -27,7 +27,7 @@ class InfoUtils {
 
   static const List<String> knowledges = [
     'Flutter, Dart',
-    'Firebase, Firestore, Storage',
+    'Firebase, GCP',
     'Nodejs ,Cloud Functions',
     'java Servlet, JSP',
   ];

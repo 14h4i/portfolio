@@ -13,6 +13,8 @@ Info _$InfoFromJson(Map<String, dynamic> json) => Info(
       json['location'] as String?,
       json['public_repos'] as int?,
       json['email'] as String?,
+      json['public_gists'] as int?,
+      json['followers'] as int?,
     );
 
 Map<String, dynamic> _$InfoToJson(Info instance) {
@@ -30,5 +32,7 @@ Map<String, dynamic> _$InfoToJson(Info instance) {
   writeNotNull('location', instance.location);
   writeNotNull('email', instance.email);
   writeNotNull('public_repos', instance.repos);
+  writeNotNull('public_gists', instance.gists);
+  writeNotNull('followers', instance.followers);
   return val;
 }

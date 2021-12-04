@@ -18,7 +18,7 @@ class AnimatedCouter extends StatelessWidget {
       tween: IntTween(begin: 0, end: value),
       duration: ConstantUtils.defaultDuration,
       builder: (context, value, child) => Text(
-        '$value$text',
+        value != 0 ? '$value$text' : '$value',
         style: Theme.of(context)
             .textTheme
             .headline6!

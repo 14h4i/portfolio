@@ -22,6 +22,12 @@ class Info {
   @JsonKey(name: 'public_repos', includeIfNull: false)
   final int? repos;
 
+  @JsonKey(name: 'public_gists', includeIfNull: false)
+  final int? gists;
+
+  @JsonKey(name: 'followers', includeIfNull: false)
+  final int? followers;
+
   Info(
     this.name,
     this.avatarUrl,
@@ -29,6 +35,8 @@ class Info {
     this.location,
     this.repos,
     this.email,
+    this.gists,
+    this.followers,
   );
 
   String get country =>

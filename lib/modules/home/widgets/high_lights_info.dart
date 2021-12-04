@@ -1,16 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio/blocs/info_bloc.dart';
 import 'package:portfolio/common/widgets/stateless/animated_counter.dart';
 import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/home/widgets/high_light.dart';
+import 'package:portfolio/providers/bloc_provider.dart';
 import 'package:portfolio/providers/responsive.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 
-class HighLightsInfo extends StatelessWidget {
+class HighLightsInfo extends StatefulWidget {
   final Info info;
   const HighLightsInfo({
     Key? key,
     required this.info,
   }) : super(key: key);
+
+  @override
+  State<HighLightsInfo> createState() => _HighLightsInfoState();
+}
+
+class _HighLightsInfoState extends State<HighLightsInfo> {
+  InfoBloc? get infoBloc => BlocProvider.of<InfoBloc>(context);
 
   @override
   Widget build(BuildContext context) {
@@ -22,20 +31,34 @@ class HighLightsInfo extends StatelessWidget {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children: [
                     HighLight(
                       counter: AnimatedCouter(
-                        value: 119,
+                        value: widget.info.followers ?? 0,
                         text: '+',
                       ),
-                      label: 'Subscribers',
+                      label: 'Followers',
                     ),
-                    HighLight(
-                      counter: AnimatedCouter(
-                        value: 40,
-                        text: '+',
-                      ),
-                      label: 'Videos',
+                    StreamBuilder<int?>(
+                      stream: infoBloc!.contributionsStream,
+                      builder: (context, snapshot) {
+                        if (snapshot.hasData) {
+                          return HighLight(
+                            counter: AnimatedCouter(
+                              value: snapshot.data!,
+                              text: '+',
+                            ),
+                            label: 'Contributions',
+                          );
+                        }
+                        return const HighLight(
+                          counter: AnimatedCouter(
+                            value: 0,
+                            text: '+',
+                          ),
+                          label: 'Contributions',
+                        );
+                      },
                     ),
                   ],
                 ),
@@ -45,17 +68,17 @@ class HighLightsInfo extends StatelessWidget {
                   children: [
                     HighLight(
                       counter: AnimatedCouter(
-                        value: info.repos ?? 0,
+                        value: widget.info.repos ?? 0,
                         text: '+',
                       ),
-                      label: 'Github Public Repositories',
+                      label: 'Public Repositories',
                     ),
-                    const HighLight(
+                    HighLight(
                       counter: AnimatedCouter(
-                        value: 13,
-                        text: 'K+',
+                        value: widget.info.gists ?? 0,
+                        text: '+',
                       ),
-                      label: 'Stars',
+                      label: 'Public Gists',
                     ),
                   ],
                 ),
@@ -64,33 +87,47 @@ class HighLightsInfo extends StatelessWidget {
           : Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                const HighLight(
+                HighLight(
                   counter: AnimatedCouter(
-                    value: 119,
+                    value: widget.info.followers ?? 0,
                     text: '+',
                   ),
-                  label: 'Subscribers',
+                  label: 'Followers',
                 ),
-                const HighLight(
-                  counter: AnimatedCouter(
-                    value: 40,
-                    text: '+',
-                  ),
-                  label: 'Videos',
+                StreamBuilder<int?>(
+                  stream: infoBloc!.contributionsStream,
+                  builder: (context, snapshot) {
+                    if (snapshot.hasData) {
+                      return HighLight(
+                        counter: AnimatedCouter(
+                          value: snapshot.data!,
+                          text: '+',
+                        ),
+                        label: 'Contributions',
+                      );
+                    }
+                    return const HighLight(
+                      counter: AnimatedCouter(
+                        value: 0,
+                        text: '+',
+                      ),
+                      label: 'Contributions',
+                    );
+                  },
                 ),
                 HighLight(
                   counter: AnimatedCouter(
-                    value: info.repos ?? 0,
+                    value: widget.info.repos ?? 0,
                     text: '+',
                   ),
-                  label: 'Github Public Repositories',
+                  label: 'Public Repositories',
                 ),
-                const HighLight(
+                HighLight(
                   counter: AnimatedCouter(
-                    value: 13,
-                    text: 'K+',
+                    value: widget.info.gists ?? 0,
+                    text: '+',
                   ),
-                  label: 'Stars',
+                  label: 'Public Gists',
                 ),
               ],
             ),
