@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/blocs/info_bloc.dart';
-import 'package:portfolio/common/widgets/stateless/activity_indicator.dart';
 import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/main/pages/main_page.dart';
 import 'package:portfolio/modules/home/widgets/high_lights_info.dart';
