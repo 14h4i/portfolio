@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/project_model.dart';
 import 'package:portfolio/providers/responsive.dart';
@@ -39,7 +40,9 @@ class ProjectCard extends StatelessWidget {
               'Read More>>',
               style: TextStyle(color: ColorUtils.primaryColor),
             ),
-            onPressed: () {},
+            onPressed: () {
+              window.location.href = project.link!;
+            },
           )
         ],
       ),

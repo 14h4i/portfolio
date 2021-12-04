@@ -38,7 +38,9 @@ class _HomePageState extends State<HomePage> {
               return MainPage(
                 info: snapshot.data!,
                 children: [
-                  const HomeBanner(),
+                  HomeBanner(
+                    info: snapshot.data!,
+                  ),
                   HighLightsInfo(info: snapshot.data!),
                   const MyProjects(),
                   // Recommendations(),

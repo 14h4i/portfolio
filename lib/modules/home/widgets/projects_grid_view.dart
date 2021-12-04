@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/models/project_model.dart';
 import 'package:portfolio/modules/home/widgets/project_card.dart';
 import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/info_utils.dart';

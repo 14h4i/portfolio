@@ -1,4 +1,5 @@
-import 'dart:html' as html;
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/main/widgets/arena_info_text.dart';
@@ -96,21 +97,21 @@ class _SideMenuState extends State<SideMenu> {
                           icon: const Icon(FontAwesomeIcons.linkedin,
                               color: ColorUtils.bodyTextColor),
                           onPressed: () {
-                            html.window.location.href = InfoUtils.linkedin;
+                            window.location.href = InfoUtils.linkedin;
                           },
                         ),
                         IconButton(
                           icon: const Icon(FontAwesomeIcons.github,
                               color: ColorUtils.bodyTextColor),
                           onPressed: () {
-                            html.window.location.href = widget.info.github!;
+                            window.location.href = widget.info.github!;
                           },
                         ),
                         IconButton(
                           icon: const Icon(FontAwesomeIcons.envelope,
                               color: ColorUtils.bodyTextColor),
                           onPressed: () {
-                            html.window.location.href =
+                            window.location.href =
                                 "mailto:${widget.info.email}";
                           },
                         ),
@@ -118,7 +119,7 @@ class _SideMenuState extends State<SideMenu> {
                           icon: const Icon(FontAwesomeIcons.telegram,
                               color: ColorUtils.bodyTextColor),
                           onPressed: () {
-                            html.window.location.href = InfoUtils.telegram;
+                            window.location.href = InfoUtils.telegram;
                           },
                         ),
                         const Spacer(),

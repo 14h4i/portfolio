@@ -1,4 +1,7 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
+import 'package:portfolio/models/info.dart';
 import 'package:portfolio/modules/home/widgets/my_build_animated_text.dart';
 import 'package:portfolio/providers/responsive.dart';
 import 'package:portfolio/utils/color_utils.dart';
@@ -6,8 +9,10 @@ import 'package:portfolio/utils/constant_utils.dart';
 import 'package:portfolio/utils/image_utils.dart';
 
 class HomeBanner extends StatelessWidget {
+  final Info info;
   const HomeBanner({
     Key? key,
+    required this.info,
   }) : super(key: key);
 
   @override
@@ -57,7 +62,9 @@ class HomeBanner extends StatelessWidget {
                       ),
                       backgroundColor: ColorUtils.primaryColor,
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      window.location.href = "mailto:${info.email}";
+                    },
                   ),
               ],
             ),
