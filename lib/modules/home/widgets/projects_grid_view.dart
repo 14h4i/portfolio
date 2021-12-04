@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/models/project_model.dart';
 import 'package:portfolio/modules/home/widgets/project_card.dart';
 import 'package:portfolio/utils/constant_utils.dart';
+import 'package:portfolio/utils/info_utils.dart';
 
 class ProjectsGridView extends StatelessWidget {
   final int crossAxisCount;
@@ -18,7 +19,7 @@ class ProjectsGridView extends StatelessWidget {
     return GridView.builder(
       shrinkWrap: true,
       physics: const NeverScrollableScrollPhysics(),
-      itemCount: demoProjects.length,
+      itemCount: InfoUtils.listProjects.length,
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: crossAxisCount,
         childAspectRatio: childAspectRatio,
@@ -26,7 +27,7 @@ class ProjectsGridView extends StatelessWidget {
         mainAxisSpacing: ConstantUtils.defaultPadding,
       ),
       itemBuilder: (context, index) => ProjectCard(
-        project: demoProjects[index],
+        project: InfoUtils.listProjects[index],
       ),
     );
   }
