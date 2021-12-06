@@ -35,7 +35,7 @@ class HomeBanner extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  "Discover my Amazing \nArt Space!",
+                  "Hello, I'm 14h4i \na Developer",
                   style: Responsive.isDesktop(context)
                       ? Theme.of(context).textTheme.headline3!.copyWith(
                             fontWeight: FontWeight.bold,
@@ -53,7 +53,7 @@ class HomeBanner extends StatelessWidget {
                 if (!Responsive.isMobileLarge(context))
                   ElevatedButton(
                     child: const Text(
-                      'EXPLORE NOW',
+                      'CONTACT ME',
                     ),
                     style: TextButton.styleFrom(
                       padding: const EdgeInsets.symmetric(

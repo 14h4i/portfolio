@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "portfolio-b2e20"
+  },
+  "targets": {
+    "portfolio-b2e20": {
+      "hosting": {
+        "admin": [
+          "portfolio-14h4i"
+        ]
+      }
+    }
+  }
+}

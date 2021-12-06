@@ -35,9 +35,10 @@ class InfoUtils {
   ];
 
   static const List<String> animatedTexts = [
-    'responsive web and mobile app.',
-    'complete e-Commerce app UI.',
-    'Chat app with dark and light theme.',
+    'My world.',
+    'Mobile Apps.',
+    'Websites.',
+    'My joy every day.',
   ];
 
   static List<Project> listProjects = [
