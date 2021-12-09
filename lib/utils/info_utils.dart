@@ -55,6 +55,12 @@ class InfoUtils {
       link: 'https://bit.ly/3I4mslU',
     ),
     Project(
+      title: "AirplaneModeChecker - Flutter Plugin",
+      description:
+          "A Flutter plugin allows you to check the status of Airplane Mode on iOS and Android mobile.",
+      link: 'https://pub.dev/packages/airplane_mode_checker',
+    ),
+    Project(
       title: "Social Network App - Flutter App",
       description:
           "Social network apps built with Flutter. Has all the functions of today's popular social networking applications.",
