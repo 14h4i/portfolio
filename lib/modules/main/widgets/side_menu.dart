@@ -84,7 +84,9 @@ class _SideMenuState extends State<SideMenu> {
                         ],
                       ),
                     ),
-                    onPressed: _downloadCv,
+                    onPressed: () {
+                      window.location.href = InfoUtils.cv;
+                    },
                   ),
                   Container(
                     margin: const EdgeInsets.only(
@@ -139,11 +141,5 @@ class _SideMenuState extends State<SideMenu> {
         ),
       ),
     );
-  }
-
-  void _downloadCv() {
-    AnchorElement anchorElement = AnchorElement(href: 'assets/cv/cv.pdf');
-    anchorElement.download = 'CV.pdf';
-    anchorElement.click();
   }
 }

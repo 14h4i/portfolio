@@ -4,6 +4,8 @@ class InfoUtils {
   static const String position = 'Junior Flutter Developer';
   static const String linkedin = "https://www.linkedin.com/in/14h4i/";
   static const String telegram = "https://t.me/l4h4i";
+  static const String cv =
+      "https://github.com/14h4i/portfolio/raw/master/assets/cv/cv.pdf";
 
   static const String age = '21';
 
