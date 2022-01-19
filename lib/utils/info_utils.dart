@@ -5,7 +5,7 @@ class InfoUtils {
   static const String linkedin = "https://www.linkedin.com/in/14h4i/";
   static const String telegram = "https://t.me/l4h4i";
   static const String cv =
-      "https://github.com/14h4i/portfolio/raw/master/assets/cv/cv.pdf";
+      "https://firebasestorage.googleapis.com/v0/b/portfolio-b2e20.appspot.com/o/cv.pdf?alt=media&token=0203510b-973e-4f49-a3b1-4dc64f53ea5b";
 
   static const String age = '21';
 
